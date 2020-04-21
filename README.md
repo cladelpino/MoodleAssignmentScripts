@@ -11,7 +11,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 1. Create a folder in your system where the process will take place.
 
-2. Download/Copy the script GenerateFolderStructure.bat to this folder.
+2. Copy the script GenerateFolderStructure.bat to this folder.
 
 3. This folder must have a subfolder name "Students".
 
@@ -23,7 +23,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 ## Usage Instructions: FillFoldersFromPool
 
-1. Generate the folder structure as described before.
+1. Generate the folder structure as described before. Copy FillFoldersFromPool.bat to the base, original folder you created in step 1 of the Folder Structure Generation.
 
 2. Create a Pool sub-folder, which will contain all the possible files.
 
