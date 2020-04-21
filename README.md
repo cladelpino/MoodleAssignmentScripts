@@ -21,7 +21,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 6. Inside the "Students" sub-folder, you should find the generated folder structure. Once you are done filling them with your files as you please, add these folders to a zip file and use the corresponding option in Moodle Assignment to upload it.
 
-## Usage Instructions: FillFoldersFromPool
+## Usage Instructions: Fill Folders From Pool
 
 1. Generate the folder structure as described before. Copy FillFoldersFromPool.bat to the base, original folder you created in step 1 of the Folder Structure Generation.
 
@@ -30,3 +30,6 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 3. Run FillFoldersFromPool.bat . 
 
 4. In every one of the folders that these script finds inside the "Students" sub-folder, a file will be copied from the "Pool" sub-folder at random.
+
+
+### Suggestions, comments, issues, etc, are welcome
