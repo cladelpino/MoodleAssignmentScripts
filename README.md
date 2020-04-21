@@ -25,11 +25,10 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 1. Generate the folder structure as described before. Copy FillFoldersFromPool.bat to the base, original folder you created in step 1 of the Folder Structure Generation.
 
-2. Create a Pool sub-folder, which will contain all the possible files.
+2. Create a Pool sub-folder, copy all the files that you want to be an option for every student.
 
 3. Run FillFoldersFromPool.bat . 
 
-4. In every one of the folders that these script finds inside the "Students" sub-folder, a file will be copied from the "Pool" sub-folder at random.
-
+4. In every one of the folders that this script finds inside the "Students" sub-folder, a file will be copied from the "Pool" sub-folder, chosen at random.
 
 ### Suggestions, comments, issues, etc, are welcome
