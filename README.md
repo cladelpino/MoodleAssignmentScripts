@@ -25,7 +25,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 1. Generate the folder structure as described before. Copy FillFoldersFromPool.bat to the base, original folder you created in step 1 of the Folder Structure Generation.
 
-2. Create a Pool sub-folder, copy all the files that you want to be an option for every student.
+2. Create a "Pool" sub-folder, copy all the files that you want to be an option for every student.
 
 3. Run FillFoldersFromPool.bat . 
 
