@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 chcp 65001
 
 rem Getting the name of what should be the only csv in the current folder.
-for /F "tokens=* USEBACKQ" %%F IN (`ls *.csv`) DO (
+for /F "tokens=* USEBACKQ" %%F IN (`dir /B *.csv`) DO (
 	set "var=%%F"
 )
 
