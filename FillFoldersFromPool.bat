@@ -10,23 +10,29 @@ for %%A in (.\Pool\*) do (
 )
 
 echo File count = %cnt%
-
+echo Nombre,Archivo>output.csv
 REM for each folder draw a random number and call the assignment function.
 for /f "delims=" %%f in ('dir .\Students\ /b /ad') do (
 	set beb=.\Students\^"%%f^"
-	echo !beb!
-	SET /A test=!RANDOM! * %cnt% / 32768
+	set /A test=!RANDOM! * %cnt% / 32768
 	call :Foo !beb! !test!
 )
 
 goto End
 
 :Foo
-echo %1
-echo %2
+for /f "tokens=3 delims=_\" %%a in ("%1%") do (
+  set "AF=%%a"
+)
+set  nowname=%AF:"=%
 set "rout=!arr[%2]!"
-echo %rout%
+for /f "tokens=3 delims=\" %%a in ("%rout%") do (
+	set nowfile="%%a"
+)
+echo !nowname!,!nowfile!>>output.csv
 IF NOT %1 == "Pool" copy "%rout%" %1
+set "nowroute=%1\!nowfile!"
+ren !nowroute! "!nowname!.pdf"
 goto :eof
 
 :End
