@@ -2,7 +2,9 @@
 setlocal EnableDelayedExpansion
 chcp 65001
 
-rm output2.log
+set "logFile=folder_structure.log"
+
+rm !logFile!
 
 rem Getting the name of what should be the only csv in the current folder.
 for /F "tokens=* USEBACKQ" %%F IN (`dir /B *.csv`) DO (
@@ -22,7 +24,7 @@ for /l %%n in (1 1 30) do (
 		if 1!nowChar! NEQ +1!nowChar! (
 			set /a wordSize=%%n+1
 		) else (
-			echo Wordsize,id,detected,fullname>>output2.log
+			echo Wordsize,id,detected,fullname>>!logFile!
 			call :Process !wordSize!
 		)
 	)
@@ -34,7 +36,7 @@ goto End
 for /f "usebackq skip=1 tokens=1-4 delims=," %%a  in ("%var%") do (
  set "id=%%a"
  set me=!id:~%1!
- echo %1,!id!,!me!,%%b>>output2.log
+ echo %1,!id!,!me!,%%b>>!logFile!
  call :Maa %%b !me!
 )
 goto End
@@ -47,5 +49,6 @@ mkdir ".\Students\%nfname%"
 goto :eof
 
 :End
+echo File %logFile% contains your information
 pause
 exit
