@@ -20,7 +20,7 @@ for /f "delims=" %%f in ('dir .\Students\ /b /ad') do (
 	call :Foo !beb! !test!
 )
 
-goto End
+goto :End
 
 :Foo
 for /f "tokens=3 delims=_\" %%a in ("%1%") do (
@@ -34,7 +34,8 @@ for /f "tokens=3 delims=\" %%a in ("%rout%") do (
 echo !nowname!,!nowfile!>>!logFile!
 IF NOT %1 == "Pool" copy "%rout%" %1
 set "nowroute=%1\!nowfile!"
-ren !nowroute! "!nowname!.pdf"
+FOR /F "tokens=2 delims=." %%G IN (!nowfile!) DO set extension=%%G
+ren !nowroute! "!nowname!.!extension!"
 goto :eof
 
 :End
