@@ -15,11 +15,11 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 3. This folder must have a subfolder name "Students".
 
-4. Download the offline grading worksheet (csv) to this folder as described [here](https://docs.moodle.org/38/en/Using_Assignment#Download_the_Grading_Worksheet_to_record_grades). This must be the only .csv file in this folder.
+4. Run GenerateFolderStructure.bat .
 
-5. Run GenerateFolderStructure.bat .
+5. Inside the "Students" sub-folder, you should find the generated folder structure. Once you are done filling them with your files as you please, add these folders to a zip file and use the corresponding option in Moodle Assignment to upload it.
 
-6. Inside the "Students" sub-folder, you should find the generated folder structure. Once you are done filling them with your files as you please, add these folders to a zip file and use the corresponding option in Moodle Assignment to upload it.
+6. A csv output file is created with each run named folder_structure.log
 
 ## Usage Instructions: Fill Folders From Pool
 
@@ -30,5 +30,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 3. Run FillFoldersFromPool.bat . 
 
 4. In every one of the folders that this script finds inside the "Students" sub-folder, a file will be copied from the "Pool" sub-folder, chosen at random.
+
+5. A csv output file is created with each run named file_assignment.log
 
 ### Suggestions, comments, issues, etc, are welcome
