@@ -13,7 +13,7 @@ Currently, two batch (pure cmd) scripts are provided, tested in Windows 10.
 
 2. Copy the script GenerateFolderStructure.bat to this folder.
 
-3. This folder must have a subfolder name "Students".
+3. Download the offline grading worksheet (csv) to this folder as described [here](https://docs.moodle.org/38/en/Using_Assignment#Download_the_Grading_Worksheet_to_record_grades). This must be the only .csv file in this folder.
 
 4. Run GenerateFolderStructure.bat .
 

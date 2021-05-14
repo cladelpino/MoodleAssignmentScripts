@@ -11,6 +11,7 @@ for /F "tokens=* USEBACKQ" %%F IN (`dir /B *.csv`) DO (
 	set "var=%%F"
 )
 
+mkdir Students
 
 echo %var%
 pause
