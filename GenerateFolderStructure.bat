@@ -2,12 +2,16 @@
 setlocal EnableDelayedExpansion
 chcp 65001
 
+rm output2.log
+
 rem Getting the name of what should be the only csv in the current folder.
 for /F "tokens=* USEBACKQ" %%F IN (`dir /B *.csv`) DO (
 	set "var=%%F"
 )
 
+
 echo %var%
+pause
 
 rem Detecting length of word used (varies with moodle locale).
 for /l %%n in (1 1 30) do (
@@ -15,11 +19,12 @@ for /l %%n in (1 1 30) do (
 	for /f "usebackq skip=1 tokens=1-4 delims=," %%a  in ("%var%") do (
 		set "m=%%a"
 		set "nowChar=!m:~%%n,1!"
-		IF 1!nowChar! NEQ +1!nowChar! (
+		if 1!nowChar! NEQ +1!nowChar! (
 			set /a wordSize=%%n+1
 		) else (
+			echo Wordsize,id,detected,fullname>>output2.log
 			call :Process !wordSize!
-		)		
+		)
 	)
 )
 
@@ -28,11 +33,8 @@ goto End
 :Process
 for /f "usebackq skip=1 tokens=1-4 delims=," %%a  in ("%var%") do (
  set "id=%%a"
- echo !id!
- echo %1
  set me=!id:~%1!
- echo !me!
- echo %%b
+ echo %1,!id!,!me!,%%b>>output2.log
  call :Maa %%b !me!
 )
 goto End

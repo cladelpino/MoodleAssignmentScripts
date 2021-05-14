@@ -2,6 +2,9 @@
 setlocal EnableDelayedExpansion
 chcp 65001
 
+rm output.log
+pause
+
 REM get nFiles in pool and fill "array".
 set cnt=0
 for %%A in (.\Pool\*) do (
@@ -10,7 +13,7 @@ for %%A in (.\Pool\*) do (
 )
 
 echo File count = %cnt%
-echo Nombre,Archivo>output.csv
+echo Nombre,Archivo>>output.log
 REM for each folder draw a random number and call the assignment function.
 for /f "delims=" %%f in ('dir .\Students\ /b /ad') do (
 	set beb=.\Students\^"%%f^"
@@ -29,7 +32,7 @@ set "rout=!arr[%2]!"
 for /f "tokens=3 delims=\" %%a in ("%rout%") do (
 	set nowfile="%%a"
 )
-echo !nowname!,!nowfile!>>output.csv
+echo !nowname!,!nowfile!>>output.log
 IF NOT %1 == "Pool" copy "%rout%" %1
 set "nowroute=%1\!nowfile!"
 ren !nowroute! "!nowname!.pdf"
